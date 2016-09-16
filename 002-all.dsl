@@ -1,14 +1,13 @@
 #47 Adaptive Model
 Arrange blocks of code
 in a data structure
-to implement
-an alternative computational model.
+to implement an alternative computational model.
 
 #Alternative Tokenization
 Alter the lexing behavior
 from within the parser.
 
-#Annotation
+#42 Annotation
 Data about program elements,
 such as classes and methods,
 which can be processed during
@@ -46,8 +45,9 @@ Translate source text by breaking it up into chunks (usually lines) and then par
 #Dependency Network
 A list of tasks linked by dependency relationships. To run a task, you invoke its dependencies, running those tasks as prerequisites.
 
-#Dynamic Reception
-Handle messages without defining them in the receiving class.
+#41 Dynamic Reception
+Handle messages without defining them
+in the receiving class.
 
 #Embedded Interpretation
 Embed interpreter actions into the grammar, so that executing the parser causes the text to be directly interpreted to produce the response.
@@ -109,8 +109,9 @@ Collects errors and other messages to report back to the caller.
 #Object Scoping
 Place the DSL script so that bare references will resolve to a single object.
 
-#Parse Tree Manipulation
-Capture the parse tree of a code fragment to manipulate it with DSL processing code.
+#43 Parse Tree Manipulation
+Capture the parse tree of a code fragment 
+to manipulate it with DSL processing code.
 
 #Parser Combinator
 Create a top-down parser by a composition of parser objects.
@@ -142,8 +143,9 @@ Translate source text by defining a grammar and using that grammar to structure 
 #Templated Generation
 Generate output by handwriting an output file and placing template callouts to generate variable portions.
 
-#Textual Polishing
-Perform simple textual substitutions before more serious processing.
+#45 Textual Polishing
+Perform simple textual substitutions
+before more serious processing.
 
 #Transformer Generation
 Generate code by writing a transformer that navigates the input model and produces output.

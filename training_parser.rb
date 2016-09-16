@@ -23,3 +23,19 @@ class  TrainingParser
     end
   end
 end
+
+class NumberFilter
+  def filter patterns
+    output = []
+    patterns.each do |pattern|
+      output << pattern if filter_pattern (pattern)
+    end
+    return output
+  end
+  def filter_pattern pattern
+    return match(pattern.name)
+  end
+  def match name
+    return name[/\d+/].to_i != 0
+  end
+end

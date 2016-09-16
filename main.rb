@@ -3,11 +3,11 @@ require_relative 'training_parser'
 
 class Training
   def initialize
-    @roundMax = 3
+    @roundMax = 10
   end
   def main
-    parser = TrainingParser.new
-    @patterns = parser.parseFile "001-demo.dsl"
+    @patterns = TrainingParser.new.parseFile "002-all.dsl"
+    @patterns = NumberFilter.new.filter @patterns
     train
     print_title "The Training finished"
   end
