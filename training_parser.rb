@@ -19,7 +19,7 @@ class  TrainingParser
     if line.start_with? "#"
       @patterns << Pattern.new( line[1..-1] )
     else
-      @patterns.last.desc += line + "\n" unless line.to_s.strip.length == 0
+      @patterns.last.desc += line  unless line.to_s.strip.length == 0
     end
   end
 end

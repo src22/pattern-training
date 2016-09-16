@@ -1,20 +1,35 @@
-#Adaptive Model
-Arrange blocks of code in a data structure to implement an alternative computational model.
+#47 Adaptive Model
+Arrange blocks of code
+in a data structure
+to implement
+an alternative computational model.
 
 #Alternative Tokenization
-Alter the lexing behavior from within the parser.
+Alter the lexing behavior
+from within the parser.
 
 #Annotation
-Data about program elements, such as classes and methods, which can be processed during compilation or execution.
+Data about program elements,
+such as classes and methods,
+which can be processed during
+compilation or execution.
 
 #BNF
-Formally define the syntax of a programming language.
+Formally define the syntax
+of a programming language.
 
-#Class Symbol Table
-Use a class and its fields to implement a symbol table in order to support type-aware autocompletion in a statically typed language.
+#44 Class Symbol Table
+Use a class and its fields
+to implement a symbol table
+in order to support
+type-aware autocompletion
+in a statically typed language.
 
-#Closure
-A block of code that can be represented as an object (or first-class data structure) and placed seamlessly into the flow of code by allowing it to reference its lexical scope.
+#37 Closure
+A block of code that can be represented
+as an object (or first-class data structure)
+and placed seamlessly into the flow of code
+by allowing it to reference its lexical scope.
 
 #Construction Builder
 Incrementally create an immutable object with a builder that stores constructor arguments in fields.
@@ -41,7 +56,7 @@ Embed interpreter actions into the grammar, so that executing the parser causes 
 Embed output production code into the parser, so that the output is produced gradually as the parse runs.
 
 #Embedment Helper
-An object that minimizes code in a templating system by providing all needed functions to that 
+An object that minimizes code in a templating system by providing all needed functions to that
 
 #Expression Builder
 An object, or family of objects, that provides a fluent interface over a normal command-query API.
@@ -135,4 +150,3 @@ Generate code by writing a transformer that navigates the input model and produc
 
 #Tree Construction
 The parser creates and returns a syntax tree representation of the source text that is manipulated later by tree-walking code.
-
