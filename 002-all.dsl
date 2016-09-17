@@ -36,14 +36,18 @@ Incrementally create an immutable object with a builder that stores constructor 
 #Context Variable
 Use a variable to hold context required during a parse.
 
-#Decision Table
-Represent a combination of conditional statements in a tabular form.
+#48 Decision Table
+Represent a combination of conditional statements
+in a tabular form.
 
 #Delimiter-Directed Translation
 Translate source text by breaking it up into chunks (usually lines) and then parsing each chunk.
 
-#Dependency Network
-A list of tasks linked by dependency relationships. To run a task, you invoke its dependencies, running those tasks as prerequisites.
+#49 Dependency Network
+A list of tasks linked by dependency relationships.
+To run a task,
+you invoke its dependencies,
+running those tasks as prerequisites.
 
 #41 Dynamic Reception
 Handle messages without defining them
@@ -70,7 +74,7 @@ A combination of function calls as a sequence of statements.
 #Generation Gap
 Separate generated code from non-generated code by inheritance.
 
-#Literal Extension
+#46 Literal Extension
 Add methods to program literals.
 
 #Literal List
@@ -110,7 +114,7 @@ Collects errors and other messages to report back to the caller.
 Place the DSL script so that bare references will resolve to a single object.
 
 #43 Parse Tree Manipulation
-Capture the parse tree of a code fragment 
+Capture the parse tree of a code fragment
 to manipulate it with DSL processing code.
 
 #Parser Combinator
