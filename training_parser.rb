@@ -7,7 +7,7 @@ class  TrainingParser
   end
   def load_model fileName, statFileName
     parseFile fileName
-    parseFile statFileName
+    parseFile statFileName if File.file?(statFileName)
     return @patterns
   end
   def parseFile fileName
@@ -45,8 +45,13 @@ class  TrainingParser
   end
   def write_stat file, p
     return if (p.stat.difficulty<=1)
-    file.write("#"+p.name+"\n")
-    file.write("difficulty "+p.stat.difficulty.to_s+"\n")
+    puts ""
+    puts "" + p.name
+    puts "difficulty " + p.stat.difficulty.to_s
+    line = "#"+p.name
+    line += "\n" unless line.end_with?( "\n" )
+    file.write(line)
+    file.write("difficulty "+p.stat.difficulty.to_s+"\n\n")
   end
 end
 class NumberFilter

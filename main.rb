@@ -5,9 +5,11 @@ require_relative 'training_parser'
 class Training
   def initialize
     @roundMax = 10
+    @model_file_name = "002-all.dsl"
+    @stat_file_name = "002-all-stat.dsl"
   end
   def main
-    @patterns = TrainingParser.new.parseFile "002-all.dsl"
+    @patterns = TrainingParser.new.load_model @model_file_name, @stat_file_name
     @patterns = NumberFilter.new.filter @patterns
     train
     print_title "The Training finished"
@@ -15,8 +17,9 @@ class Training
   def train
     for @i in 1..@roundMax
       s = do_a_round
-      return if s.include? "x"
+      break if s.include? "x"
     end
+    TrainingParser.new.save_stats @patterns, @stat_file_name
   end
   def do_a_round
     clear_screen
@@ -29,6 +32,11 @@ class Training
     puts pattern.desc
     s = get_user_response
     changeDifficulty pattern, s
+
+    # puts "<"+s+">"
+    # puts " difficulty " + pattern.stat.difficulty.to_s
+    # alma = gets
+
     return s
   end
   def clear_screen
@@ -56,8 +64,8 @@ class Training
     return s
   end
   def changeDifficulty pattern, s
-    pattern.stat.descrease if "1"==s
-    pattern.stat.increase if "3"==s
+    pattern.stat.descrease if 1==s.to_i
+    pattern.stat.increase if 3==s.to_i
   end
 end
 
