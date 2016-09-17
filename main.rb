@@ -7,6 +7,8 @@ class Training
     @roundMax = 10
     @model_file_name = "002-all.dsl"
     @stat_file_name = "002-all-stat.dsl"
+    @history = []
+    @patterns = []
   end
   def main
     @patterns = TrainingParser.new.load_model @model_file_name, @stat_file_name
@@ -25,7 +27,10 @@ class Training
     clear_screen
     print_title "The Training starts now..." if @i==1
     print_title "Round #{@i}/#{@roundMax}"
-    pattern = @patterns[rand(@patterns.length)]
+
+    pattern = WeightCounter.new.select_random @history, @patterns
+
+
     puts pattern.name
     s = gets
     puts "--------------------------"

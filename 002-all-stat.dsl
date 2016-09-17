@@ -1,5 +1,5 @@
 #44 Class Symbol Table
-difficulty 300
+difficulty 3
 
 #37 Closure
 difficulty 3
