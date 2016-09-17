@@ -1,4 +1,5 @@
 require_relative 'model'
+require_relative 'motor'
 require_relative 'training_parser'
 
 class Training
@@ -27,6 +28,7 @@ class Training
     puts "--------------------------"
     puts pattern.desc
     s = get_user_response
+    changeDifficulty pattern, s
     return s
   end
   def clear_screen
@@ -52,6 +54,10 @@ class Training
     puts ""
     s = gets
     return s
+  end
+  def changeDifficulty pattern, s
+    pattern.stat.descrease if "1"==s
+    pattern.stat.increase if "3"==s
   end
 end
 

@@ -2,11 +2,9 @@
 require_relative 'model'
 
 class  TrainingParser
-
   def initialize
     @patterns = []
   end
-
   def parseFile fileName
     input = File.readlines(fileName)
     input.each do |line|
@@ -14,7 +12,6 @@ class  TrainingParser
     end
     return @patterns
   end
-
   def process_line line
     if line.start_with? "#"
       @patterns << Pattern.new( line[1..-1] )
