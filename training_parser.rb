@@ -5,6 +5,11 @@ class  TrainingParser
   def initialize
     @patterns = []
   end
+  def load_model fileName, statFileName
+    parseFile fileName
+    parseFile statFileName
+    return @patterns
+  end
   def parseFile fileName
     input = File.readlines(fileName)
     input.each do |line|
@@ -14,13 +19,36 @@ class  TrainingParser
   end
   def process_line line
     if line.start_with? "#"
-      @patterns << Pattern.new( line[1..-1] )
+      name = line[1..-1]
+      @actPattern = @patterns.detect { |p| p.name == name }
+      if (@actPattern==nil)
+        @actPattern = Pattern.new( name )
+        @patterns << @actPattern
+      end
+    elsif line.start_with? "difficulty"
+      @actPattern.stat.difficulty = extract_number_but_zero(line)
     else
-      @patterns.last.desc += line  unless line.to_s.strip.length == 0
+      @actPattern.desc += line  unless line.to_s.strip.length == 0
     end
   end
+  def extract_number_but_zero line
+    number = line[/\d+/].to_i
+    return 1 if (number==0)
+    return number
+  end
+  def save_stats patterns, fileName
+    File.open(fileName, 'w') do |file|
+      patterns.each do |p|
+        write_stat file, p
+      end
+    end
+  end
+  def write_stat file, p
+    return if (p.stat.difficulty<=1)
+    file.write("#"+p.name+"\n")
+    file.write("difficulty "+p.stat.difficulty.to_s+"\n")
+  end
 end
-
 class NumberFilter
   def filter patterns
     output = []
