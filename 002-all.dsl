@@ -44,7 +44,8 @@ in a tabular form.
 Translate source text by breaking it up into chunks (usually lines) and then parsing each chunk.
 
 #49 Dependency Network
-A list of tasks linked by dependency relationships.
+A list of tasks
+linked by dependency relationships.
 To run a task,
 you invoke its dependencies,
 running those tasks as prerequisites.
@@ -62,14 +63,17 @@ Embed output production code into the parser, so that the output is produced gra
 #Embedment Helper
 An object that minimizes code in a templating system by providing all needed functions to that
 
-#Expression Builder
-An object, or family of objects, that provides a fluent interface over a normal command-query API.
+#32 Expression Builder
+An object, or family of objects,
+that provides a fluent interface
+over a normal command-query API.
 
 #Foreign Code
 Embed some foreign code into an external DSL to provide more elaborate behavior than can be specified in the DSL.
 
-#Function Sequence
-A combination of function calls as a sequence of statements.
+#33 Function Sequence
+A combination of function calls
+as a sequence of statements.
 
 #Generation Gap
 Separate generated code from non-generated code by inheritance.
@@ -77,17 +81,23 @@ Separate generated code from non-generated code by inheritance.
 #46 Literal Extension
 Add methods to program literals.
 
-#Literal List
-Represent language expression with a literal list.
+#39 Literal List
+Represent language expression
+with a literal list.
 
-#Literal Map
-Represent an expression as a literal map.
+#40 Literal Map
+Represent an expression
+as a literal map.
 
 #Macro
 Transform input text into a different text before language processing using Templated Generation .
 
-#Method Chaining
-Make modifier methods return the host object, so that multiple modifiers can be invoked in a single expression.
+#35 Method Chaining
+Make modifier methods
+return the host object,
+so that multiple modifiers
+can be invoked
+in a single expression.
 
 #Model Ignorant Generation
 Hardcode all logic into the generated code so that there's no explicit representation of the Semantic Model .
@@ -95,27 +105,36 @@ Hardcode all logic into the generated code so that there's no explicit represent
 #Model-Aware Generation
 Generate code with an explicit simulacrum of the semantic model of the DSL, so that the generated code has generic-specific separation.
 
-#Nested Closure
-Express statement subelements of a function call by putting them into a closure in an argument.
+#38 Nested Closure
+Express statement subelements
+of a function call
+by putting them into
+a closure in an argument.
 
-#Nested Function
-Compose functions by nesting function calls as arguments of other calls.
+#34 Nested Function
+Compose functions
+by nesting function calls
+as arguments of other calls.
 
 #Nested Operator Expression
 An operator expression that can recursively contain the same form of expression (for example, arithmetic and Boolean expressions).
 
-#Newline Separators
-Use newlines as statement separators.
+#30 Newline Separators
+Use newlines
+as statement separators.
 
 #Notification
 Collects errors and other messages to report back to the caller.
 
-#Object Scoping
-Place the DSL script so that bare references will resolve to a single object.
+#36 Object Scoping
+Place the DSL script so that
+bare references
+will resolve to a single object.
 
 #43 Parse Tree Manipulation
 Capture the parse tree of a code fragment
-to manipulate it with DSL processing code.
+to manipulate it
+with DSL processing code.
 
 #Parser Combinator
 Create a top-down parser by a composition of parser objects.
@@ -123,8 +142,10 @@ Create a top-down parser by a composition of parser objects.
 #Parser Generator
 Build a parser driven by a grammar file as a DSL.
 
-#Production Rule System
-Organize logic through a set of production rules, each having a condition and an action.
+#50 Production Rule System
+Organize logic
+through a set of production rules,
+each having a condition and an action.
 
 #Recursive Descent Parser
 Create a top-down parser using control flow for grammar operators and recursive functions for nonterminal recognizers.
@@ -135,8 +156,10 @@ Implement a lexical analyzer using a list of regular expressions.
 #Semantic Model
 The model that's populated by a DSL.
 
-#State Machine
-Model a system as a set of explicit states with transitions between them.
+#51 State Machine
+Model a system
+as a set of explicit states
+with transitions between them.
 
 #Symbol Table
 A location to store all identifiable objects during a parse to resolve references.
