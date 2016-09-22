@@ -25,10 +25,13 @@ type-aware autocompletion
 in a statically typed language.
 
 #37 Closure
-A block of code that can be represented
-as an object (or first-class data structure)
+A block of code
+that can be represented
+as an object
+(or first-class data structure)
 and placed seamlessly into the flow of code
-by allowing it to reference its lexical scope.
+by allowing it
+to reference its lexical scope.
 
 #Construction Builder
 Incrementally create an immutable object with a builder that stores constructor arguments in fields.
@@ -51,7 +54,8 @@ you invoke its dependencies,
 running those tasks as prerequisites.
 
 #41 Dynamic Reception
-Handle messages without defining them
+Handle messages
+without defining them
 in the receiving class.
 
 #Embedded Interpretation
