@@ -55,6 +55,10 @@ class  TrainingParser
   end
 end
 class NumberFilter
+  def initialize(min,max)
+    @min = min
+    @max = max
+  end
   def filter patterns
     output = []
     patterns.each do |pattern|
@@ -66,6 +70,7 @@ class NumberFilter
     return match(pattern.name)
   end
   def match name
-    return name[/\d+/].to_i != 0
+    value = name[/\d+/].to_i
+    return  (value != 0) && (value > @min-1) && (value < @max+1)
   end
 end

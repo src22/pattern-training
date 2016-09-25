@@ -7,12 +7,15 @@ class Training
     @roundMax = 10
     @model_file_name = "002-all.dsl"
     @stat_file_name = "002-all-stat.dsl"
+    @pattern_number_minimum = 10
+    @pattern_number_maximum = 30
     @history = []
     @patterns = []
   end
   def main
     @patterns = TrainingParser.new.load_model @model_file_name, @stat_file_name
-    @patterns = NumberFilter.new.filter @patterns
+    filter = NumberFilter.new(@pattern_number_minimum,@pattern_number_maximum)
+    @patterns = filter.filter @patterns
     train
     print_title "The Training finished"
   end
