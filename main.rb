@@ -4,11 +4,11 @@ require_relative 'training_parser'
 
 class Training
   def initialize
-    @roundMax = 10
+    @roundMax = 20
     @model_file_name = "002-all.dsl"
     @stat_file_name = "002-all-stat.dsl"
     @pattern_number_minimum = 10
-    @pattern_number_maximum = 30
+    @pattern_number_maximum = 20
     @history = []
     @patterns = []
   end
@@ -29,15 +29,17 @@ class Training
   def do_a_round
     clear_screen
     print_title "The Training starts now..." if @i==1
-    print_title "Round #{@i}/#{@roundMax}"
+    print_title "[#{@i}/#{@roundMax}]"
 
     pattern = WeightCounter.new.select_random @history, @patterns
 
-
-    puts pattern.name
+	puts ""
+	puts ""
+	puts ""
+    puts "      "+pattern.name
     s = gets
-    puts "--------------------------"
-    puts pattern.desc
+    puts "      "
+    puts add_spaces(pattern.desc)
     s = get_user_response
     changeDifficulty pattern, s
 
@@ -50,11 +52,14 @@ class Training
   def clear_screen
     Gem.win_platform? ? (system "cls") : (system "clear")
   end
+  def add_spaces arg 	
+	return "\n      " + arg.gsub("\n","\n\n      ")
+  end
   def print_title arg
     puts ""
-    puts "--------------------------"
-    puts arg
-    puts "--------------------------"
+    puts "      "
+    puts "      " + arg
+    puts "      "
   end
   def get_user_response
     s = gets
@@ -62,11 +67,11 @@ class Training
     puts ""
     puts ""
     puts ""
-    puts "--------------------------"
-    puts " 1 - it was too easy "
-    puts " 2 - it was ok "
-    puts " 3 - it was hard "
-    puts " x - exit "
+    puts "      --------------------------"
+    puts "       1 - it was too easy "
+    puts "       2 - it was ok "
+    puts "       3 - it was hard "
+    puts "       x - exit "
     puts ""
     s = gets
     return s
